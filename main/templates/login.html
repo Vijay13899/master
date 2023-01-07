@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+<h1>Login</h1>
+<form method="post" class="container border mt-3 bg-light">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col border-left py-2">
+          <div class="form-group">
+            <h5>Username</h5>
+            <input type="text" name="username">
+          </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col border-left py-2">
+            <div class="form-group">
+              <h5>Password</h5>
+              <input type="password" name="password">
+            </div>
+          </div>
+    </div>
+    <input type="submit" name="Create User" class="btn btn-primary my-2">
+</form>
+{% for m in messages %}
+<p id="message">{{ m }}</p>
+{% endfor %}
+</div>
+{% endblock %}

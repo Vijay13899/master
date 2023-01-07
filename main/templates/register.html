@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container">
+    <h1>Register</h1>
+    <form method="post" class="container border mt-3 bg-light">
+        {% csrf_token %}
+        {% for field in form %}
+        <div class="row">
+            <div class="col border-left py-2">
+            <div class="form-group">
+                <h5>{{ field.label }}</h5>
+                    {{ field }}
+            </div>
+            </div>
+        </div>
+        {% endfor %}
+        {{ form.errors }}
+        <input type="submit" name="Create User" class="btn btn-primary my-2">
+    </form>
+</div>
+{% endblock %}

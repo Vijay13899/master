@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="container p-5">
+    <h1>Welcome to home Page</h1>
+    <a href="{% url 'activityPage' %}" class="btn btn-primary">Enter activity</a>
+    <a href="{% url 'activitylog' %}" class="btn btn-primary">View activity</a>
+</div>
+{% endblock %}
